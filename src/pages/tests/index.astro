@@ -1,0 +1,54 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+
+const tests = [
+  {
+    title: "你是哪种猫？",
+    description: "5 道题，测出你的猫系性格",
+    url: "/tests/cat-personality/",
+    emoji: "🐱",
+  },
+  {
+    title: "你幸福吗？",
+    description: "72 道题，测出你的六维幸福指数",
+    url: "/tests/6d-happiness/",
+    emoji: "😊",
+  },
+  {
+    title: "修仙境界测试",
+    description: "20 道题，测测你的修真造诣",
+    url: "/tests/cultivation/",
+    emoji: "🧘",
+  },
+  {
+  title: "反应速度测试",
+  description: "5 轮取平均，测测你的神经反射",
+  url: "/tests/reaction/",
+  emoji: "⚡",
+  },
+];
+---
+
+<MainGridLayout title="趣味测试">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-2">🧩 趣味测试</h1>
+    <p class="text-neutral-500 mb-8">点开一个，测测看</p>
+
+    <div class="grid gap-4 md:grid-cols-2">
+      {tests.map((test) => (
+        <a
+          href={test.url}
+          data-astro-transition="false"
+          data-swup-ignore
+          data-no-swup
+          onclick={`window.location.href='${test.url}'; return false;`}
+          class="card-base p-6 hover:shadow-lg transition block"
+        >
+          <div class="text-4xl mb-3">{test.emoji}</div>
+          <h2 class="text-xl font-bold mb-2">{test.title}</h2>
+          <p class="text-neutral-500">{test.description}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</MainGridLayout>

@@ -1,0 +1,14 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import ReactionTest from "@/components/tests/ReactionTest.svelte";
+---
+
+<MainGridLayout title="反应速度测试">
+  <div class="container mx-auto px-4 py-8 max-w-2xl">
+    <a href="/tests/" class="text-sm text-neutral-400 hover:text-neutral-600">← 返回测试列表</a>
+    <h1 class="text-3xl font-bold mt-4 mb-2">反应速度测试</h1>
+    <p class="text-neutral-500 mb-8">5 轮取平均，测测你的神经反射有多快</p>
+
+    <ReactionTest client:only="svelte" />
+  </div>
+</MainGridLayout>

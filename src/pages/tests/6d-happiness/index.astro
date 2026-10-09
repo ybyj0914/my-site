@@ -1,0 +1,14 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import HappinessTest from "@/components/tests/HappinessTest.svelte";
+---
+
+<MainGridLayout title="你幸福吗？">
+  <div class="container mx-auto px-4 py-8 max-w-3xl">
+    <a href="/tests/" class="text-sm text-neutral-400 hover:text-neutral-600">← 返回测试列表</a>
+    <h1 class="text-3xl font-bold mt-4 mb-2">你幸福吗？</h1>
+    <p class="text-neutral-500 mb-8">72 道题 · 约 10 分钟 · 请按近三个月的真实感受作答，测出你的幸福指数</p>
+
+    <HappinessTest client:only="svelte" />
+  </div>
+</MainGridLayout>
